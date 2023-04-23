@@ -1,0 +1,152 @@
+body
+{
+    font-family: 'Poppins', sans-serif;
+}
+/* upper header */
+
+.logo
+{
+    height: 60px;
+    width: 100%;
+}
+.upperHeader a 
+{
+    color: #FF908E;
+    text-align: center;
+    margin-left: 2%;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    /* text-decoration: none; */
+}
+.upperHeader a:hover
+{
+    color: #C71A17;
+}
+
+/* <!-- lowerHeader --> */
+header>.menuItem div a
+{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0px;
+    text-align: center;
+    text-align: center;
+    font-weight: 500;
+}
+header>.menuItem div a:hover
+{
+    color: #FF908E;
+}
+header>.menuItem div>.currentPage
+{
+    color: #C71A17;
+    font-style: bold;
+}
+
+/* banner 1 */
+.banner1
+{
+    background: url("/static/images/PRODdETAILS.jpg");
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    background-size: 100% 100%;
+}
+
+.banner1Text
+{
+    color: white;
+}
+.banner1Text h2
+{
+    font-weight: 700;
+}
+.banner1>.container button
+{
+    background-color: #EF5350;
+    border-color: #EF5350;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+.banner1>.container button:hover
+{
+    background-color: #C71A17;
+}
+
+/* banner2 */
+.banner2 .heading h2
+{
+    font-weight: 700;
+}
+.item button p
+{
+    color:white;
+}
+.item button
+{
+    background-color: #EF5350;
+    border-radius: 30px;
+}
+.item button:hover
+{
+    background-color: #C71A17;
+}
+
+/* bill */
+
+.bill button p
+{
+    color:white;
+}
+.bill button
+{
+    background-color: #EF5350;
+    border-radius: 30px;
+}
+.bill button:hover
+{
+    background-color: #C71A17;
+}
+.bill h3
+{
+    font-weight: 600;
+}
+/* <!-- footer --> */
+footer
+{
+    background-color: #272626;
+    color: white;
+}
+footer h2{
+    font-weight: 800;
+}
+footer h3{
+    font-weight: 700;
+}
+footer .subsBtn
+{
+    background-color: #EF5350;
+    color:white;
+}
+footer .subsBtn:hover
+{
+    background-color: #C71A17;
+    color:white;
+}
+footer a h4
+{
+    font-size: 18px;
+    color: white;
+}
+footer a
+{
+    text-decoration: none;
+}
+footer a h4:hover
+{
+    color: rgb(155, 155, 155);
+}

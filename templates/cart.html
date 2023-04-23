@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/cart.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <title>BUTCHER</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <!-- banner1 -->
+    <section class="banner1 pt-2">
+
+        <div class="container py-md-5" >
+            <div class="row justify-content-center">
+                <div class="col-md-5 my-2 ms-md-4 banner1Text" >
+                    <h2 style="font-size: 38px;">CART OVERVIEW</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- banner2 -->
+    <section class="banner2 pt-5">
+        <div class="container">
+            <!-- justify-content-around -->
+            <div class="row  heading">
+                <div class="col-md-4 ">
+                    <h2 style="text-align: center;">Product Name</h2>
+                </div>
+                <div class="col-md-3 ms-md-5">
+                    <h2>Quantity</h2>
+                </div>
+                <div class="col-md-3 ">
+                    <h2>Price</h2>
+                </div>
+            </div>
+            <!-- items -->
+            {% for product in products %}
+            <div class="row mt-5  align-items-center item" >
+                <!-- item --> 
+                <div class="col-md-2">
+                    <img src="{{product.product.image.url}}" style="width:127px;height: 114px;border-radius: 199px;" alt="">
+                </div>
+                <div class="col-md-2">
+                    <h2 style="font-size: 22px;font-weight:600;">{{product.product.title}}</h2>
+                </div>
+
+                <div class="col-md-2 mx-auto  form-group">
+                    <input type="number" min="0" class="form-control"  placeholder="Quantity" style="width:100%;height:100%;" disabled value="{{product.quantity}}">
+                </div>
+
+                <div class="col-md-2 mx-auto">
+                    <h2 style="font-size: 22px;font-weight:600;">RS {% widthratio product.product.price 1 product.quantity %}</h2>
+                </div>
+
+                <div class="col-md-2">
+                    <button  class="px-4 py-2">
+                        <p class = "my-auto"><a href="{% url 'products:remove' product.id %}" class = "my-auto" style="color:white;text-decoration:none">Remove</a></p>
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- bill -->
+            <div class="row py-5 justify-content-end bill">
+                <div class="col-md-3">
+                    <h3>
+                        Total Bill
+                    </h3>
+                    <h3 style="font-size: 45px; color: #C71A17; font-weight: 700;">
+                        RS {{bill}}
+                    </h3>
+                    <h3 style="font-size: 15px; color:grey">
+                        Tax included
+                    </h3>
+                    <button  class="px-4 py-2">
+                        <p class = "my-auto">Confirm</p>
+                    </button>
+                </div>
+
+                <!-- <div class="col-md-3" >
+                    <button  class="px-4 py-2">
+                        <p class = "my-auto">Remove</p>
+                    </button>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+</html>

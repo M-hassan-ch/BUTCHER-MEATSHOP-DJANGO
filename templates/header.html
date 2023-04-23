@@ -1,0 +1,42 @@
+<header class="container mb-md-3">
+    <!-- upperHeader -->
+    <div class="row justify-content-between upperHeader mt-3">
+        <div class="col-md-2">
+            <img src="/static/images/logo.png" class="logo" alt="logo">
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="col-md-2 align-self-center text" >
+            <a href="/auth/logout" >Logout: {{request.user}}</a>
+        </div>
+        {% else %}
+        <div class="col-md-2 align-self-center text" >
+            <a href="/login" >Login</a>
+            <a>|</a>
+            <a href="/register" >Register</a>
+        </div>
+        {% endif %}
+
+        
+    </div>
+    <!-- lowerHeader -->
+    <div class="row justify-content-around menuItem">
+        <div class="col-md-2 mt-3">
+            <a href="/home" >Home
+                <!-- class="currentPage"  -->
+                <!-- <div class = "mt-1" style="background-color: #C71A17;width: 40%; height: 3px; margin:auto"></div> -->
+            </a>
+        </div>
+        <div class="col-md-2 mt-3">
+            <a href="{% url 'products:' %}">View products</a>
+        </div> 
+        <div class="col-md-2 mt-3">
+            <a href="{% url 'products:showCart' %}">Cart</a>
+        </div>
+        <div class="col-md-2 mt-3">
+            <a href="#contact">Contact Us</a>
+        </div>
+        <div class="col-md-2 mt-3">
+            <a href="/aboutUs">About</a>
+        </div>
+    </div>
+</header>
